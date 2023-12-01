@@ -34,6 +34,7 @@ function Blocks() {
     main.appendChild(block);
     document.getElementById(i).innerHTML =
     "<iframe src='" + videos[getRandomInt(8)] + "&autoplay=1&mute=1&loop=1' frameborder='0'></iframe>";
+    
   }
 }
 

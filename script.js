@@ -5,10 +5,14 @@ var boxes = 0;
 let video = 0;
 
 const videos = [
-  'https://www.youtube.com/embed/Pt5_GSKIWQM?si=6FtNU6HUs0d1mRIe&autoplay=1'
+  'https://www.youtube.com/embed/Pt5_GSKIWQM?si=6FtNU6HUs0d1mRIe&amp&autoplay=1'
   ,'https://www.youtube.com/embed/ChBg4aowzX8?si=BU6f3RM_lBnv_9M8&amp&autoplay=1'
   ,'https://www.youtube.com/embed/bHTjGKjdUiU?si=-8_79aAHmX9nlbxZ&amp&autoplay=1'
   ,'https://www.youtube.com/embed/9eqvo0uqpTs?si=TxMTK1E3qFJOUcES&amp&autoplay=1'
+  ,'https://www.youtube.com/embed/kqFxhfSKZdM?si=OieRKYfFufKGbn92&amp&autoplay=1'
+  ,'https://www.youtube.com/embed/n_Dv4JMiwK8?si=w3VxPbFFq_lEn6nY&amp&autoplay=1'
+  ,'https://www.youtube.com/embed/10gjsgA6fTE?si=onRBAVxvywY0mlUY&amp&autoplay=1'
+  ,'https://www.youtube.com/embed/vVJuMq1CMNo?si=htG_uCsMzJbn9JmX&amp&autoplay=1'
   ];
 
 function getRandomInt(max) {
@@ -34,7 +38,8 @@ function Blocks() {
       video = 0;
     }
     document.getElementById(i).innerHTML =
-    "<iframe src='" + videos[video] + "' frameborder='0'></iframe>";
+    "<iframe src='" + videos[getRandomInt(8)] + "' frameborder='0'></iframe>";
+    
     video++
   }
 }

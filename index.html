@@ -9,9 +9,11 @@
   </head>
   <body>
     <div id="menu">
-      <button id="menu_button" style="font-size: 20px;">☰</button>
+      <button id="menu_button" style="font-size: 20px;" onclick="Nav()">☰</button>
       <div id="menu_content">
-        <p style="text-align: center; font-size: 25px;">Test</p>
+        <p class="rainbow">COINS: <span id="balance">1</span></p>
+        <button onclick="updateBalance()" class="">CLICK ME FOR COINS!!!</button>
+        <button onclick="purchaseVideo()">CLICK ME FOR MORE VIDEOS!!!</button>
       </div>
     </div>
     <div id="main"></div>

@@ -1,7 +1,7 @@
 const body = document.querySelector("body");
 const main = document.getElementById("main")
 
-var boxes = 0;
+var boxes = 1;
 
 const videos = [
    'https://www.youtube.com/embed/Pt5_GSKIWQM?si=6FtNU6HUs0d1mRIe'
@@ -18,13 +18,16 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-function Blocks() {
-  if (window.innerWidth < 600) {
-    boxes = 2;
-  } else {
-    boxes = 4;
+function purchaseVideo() {
+  const text = document.getElementById('balance');
+  if (parseInt(text.innerHTML) >= 50) {
+      text.innerHTML = (parseInt(text.innerHTML) - 50);
+      boxes++
+      Videos();
   }
+}
 
+function Videos() {
   main.innerHTML = "";
 
   for (let i = 0; i < boxes; i++) {
@@ -38,5 +41,23 @@ function Blocks() {
   }
 }
 
+var nav_toggle = new Boolean();
 
-body.onload = body.onresize = Blocks;
+function Nav() {
+  if (nav_toggle){
+    console.log("ja")
+    document.getElementById("menu_content").style.display = "flex"
+    nav_toggle = false;
+  }
+  else {
+    document.getElementById("menu_content").style.display = "none"
+    nav_toggle = true;
+  }
+}
+
+function updateBalance() {
+  const text = document.getElementById('balance');
+  text.innerHTML = (parseInt(text.innerHTML) + 1);
+}
+
+body.onload = Videos;

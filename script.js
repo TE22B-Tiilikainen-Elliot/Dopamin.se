@@ -36,7 +36,7 @@ function Videos() {
     block.id = i;
     main.appendChild(block);
     document.getElementById(i).innerHTML =
-    "<iframe src='" + videos[getRandomInt(8)] + "&autoplay=1&mute=1&loop=1' frameborder='0'></iframe>";
+    "<iframe src='" + videos[i] + "&autoplay=1&mute=1&loop=1' frameborder='0'></iframe>";
     
   }
 }

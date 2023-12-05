@@ -29,6 +29,7 @@ function purchaseVideo() {
 
 function Videos() {
   main.innerHTML = "";
+  var video = 0;
 
   for (let i = 0; i < boxes; i++) {
     var block = document.createElement("div");
@@ -36,8 +37,17 @@ function Videos() {
     block.id = i;
     main.appendChild(block);
     document.getElementById(i).innerHTML =
-    "<iframe src='" + videos[i] + "&autoplay=1&mute=1&loop=1' frameborder='0'></iframe>";
-    
+    "<iframe src='" + videos[video] + "&autoplay=1&mute=1&loop=1' frameborder='0'></iframe>";
+    video++
+    if (video+1 > videos.length){
+      video = 0;
+    }
+  }
+  if (boxes > 8){
+    var blocksElements = document.getElementsByClassName('blocks');
+    for (let i = 0; i < blocksElements.length; i++) {
+    blocksElements[i].style.height = "22vh";
+    }
   }
 }
 
@@ -45,7 +55,6 @@ var nav_toggle = new Boolean();
 
 function Nav() {
   if (nav_toggle){
-    console.log("ja")
     document.getElementById("menu_content").style.display = "flex"
     nav_toggle = false;
   }

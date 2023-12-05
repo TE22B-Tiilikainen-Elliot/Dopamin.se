@@ -69,4 +69,4 @@ function updateBalance() {
   text.innerHTML = (parseInt(text.innerHTML) + 1);
 }
 
-body.onload/*onbro*/ = Videos;
+body.onload = Videos;
